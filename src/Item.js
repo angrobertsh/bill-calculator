@@ -1,4 +1,4 @@
-import { useCallback, useState } from 'react'
+import { useCallback, useMemo, useState } from 'react'
 import { ItemForm } from './ItemForm'
 
 export const Item = ({ items, item, people, setItems }) => {
@@ -15,6 +15,18 @@ export const Item = ({ items, item, people, setItems }) => {
         setItems([...itemsCopy])
     }, [items, setItems])
 
+    const eatersString = useMemo(() => {
+        if (item.eaters.length === 0) {
+            return <i>Nobody is paying for this</i>
+        }
+
+        if (item.eaters.length === people.length) {
+            return <span className="everyone">Everyone</span>
+        }
+
+        return item.eaters.map(eaterIdx => people[eaterIdx].name).join(', ')
+    }, [item.eaters, people])
+
     return (
         <div >
             { isEditMode ? 
@@ -30,11 +42,7 @@ export const Item = ({ items, item, people, setItems }) => {
                                 <div>(${item.price})</div>
                             </div>
                             <div>
-                                {
-                                    item.eaters.length > 0 ? 
-                                    item.eaters.map(eaterIdx => people[eaterIdx].name).join(', ') : 
-                                    <i>Nobody is paying for this</i>
-                                }
+                                {eatersString}
                             </div>
                         </div>
                         <div className="item-actions">

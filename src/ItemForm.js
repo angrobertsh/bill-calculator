@@ -34,6 +34,7 @@ export const ItemForm = ({ item, items, setItems, people, afterSave }) => {
         }
 
         setNewItem(DEFAULT_ITEM)
+        setIsShared(false)
     }, [afterSave, item, items, newItem, setItems])
 
     const getSelectValue = useCallback(() => {

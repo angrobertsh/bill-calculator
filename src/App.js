@@ -7,13 +7,13 @@ import { Totals } from './Totals'
 // Schema: 
 // {
 //   people: [{ name: "John", tip: "18.0" }],
-//   tax: "10.5",
+//   tax: { type: "percent", value: "10.5" },
 //   items: [{ name: "Egg rolls", price: "100.00", eaters: [0], isShared true }],
 // }
 
 const App = ({ storedData }) => {
   const [people, setPeople] = useState(storedData.people || [])
-  const [tax, setTax] = useState(storedData.tax || 10.50)
+  const [tax, setTax] = useState(storedData.tax || { type: "percent", value: 10.5 })
   const [items, setItems] = useState(storedData.items || [])
 
   useEffect(() => {
@@ -28,7 +28,7 @@ const App = ({ storedData }) => {
 
   const clearAll = useCallback(() => {
     setItems([])
-    setTax(10.50)
+    setTax({ type: "percent", value: 10.5 })
     setPeople([])
     localStorage.setItem("BillSplitter", '{}')
   }, [])

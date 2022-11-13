@@ -18,7 +18,7 @@ const getSavedData = () => {
 // Schema: 
 // {
 //   people: [{ name: "John", tip: "18.0" }],
-//   tax: "10.5",
+//   tax: { type: "percent", value: "10.5" },
 //   items: [{ name: "Egg rolls", price: "100.00", eaters: [0], isShared true }],
 // }
 
@@ -56,7 +56,15 @@ const validatePeople = (people) => {
   }
 }
 
-const validateTax = (tax) => !validateNumber(tax)
+const validateTax = (tax) => {
+  if (!["percent", "dollars"].includes(tax.type)) {
+    return true
+  }
+
+  if (!validateNumber(tax.value)) {
+    return true
+  }
+}
 
 const validateNumber = (num) => !isNaN(parseFloat(num))
 const validateString = (str) => typeof str === 'string' || str instanceof String
