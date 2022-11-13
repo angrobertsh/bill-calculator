@@ -1,38 +1,145 @@
 .App {
-  text-align: center;
+  max-width: 600px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.danger {
+  background-color: red !important;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.section {
+  padding: 1rem;
+  background-color: #ceced6;
+  border: 1px solid #242429;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.header {
+  font-size: larger;
+  padding: .5rem 0;
+}
+
+.person {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
+  padding: .5rem;
+}
+
+#totals .person {
+  display: grid;
+  grid-template-columns: 28% 21% 28% 21%;
+}
+
+.people .person:nth-child(odd){
+  background-color: #4C8BF5;
+  color: #fff;
+}
+
+.people .person:nth-child(even){
+  background-color: #fff;
+}
+
+#totals .person:nth-child(odd){
+  background-color: #4C8BF5;
+  color: #fff;
+}
+
+#totals .person:nth-child(even){
+  background-color: #fff;
+}
+
+.people {
+  margin-bottom: .3rem;
+}
+
+button {
+  padding: .4rem 1.25rem;
+  margin: 0rem .3rem;
+}
+
+input {
+  margin: .3rem 0;
+  padding: .4rem;
+}
+
+select {
+  margin: .3rem 0;
+  padding: .4rem;
+}
+
+.items {
+  padding: .3rem 0;
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  padding: .5rem;
+  background-color: white;
+  border: 1px solid black;
+  margin: .2rem 0;
+}
+
+.item-actions {
+  display: flex;
+}
+
+.newform {
+  background-color: white;
+  padding: .5rem;
+  border-radius: 4px;
+}
+
+.editform {
+  background-color: #e6e6fc;
+  padding: .5rem;
+  border-radius: 4px;
+  border: 1px solid #333396;
+}
+
+.clearAll {
+  margin: 2rem;
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.eaters {
+  display: flex;
+  margin-bottom: .4rem;
+  flex-wrap: wrap;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.checkpair {
+  min-width: 5rem;
+  margin-right: 1rem;
+  display: flex;
+}
+
+.checklabel {
+  margin-right: .3rem;
+}
+
+.itemNamePrice {
+  display: flex;
+  margin-bottom: .3rem;
+}
+
+.itemName {
+  margin-right: 1rem;
+}
+
+.tipinput {
+  display: flex;
+  align-items: center;
+}
+
+.tip {
+  margin-right: .3rem;
+}
+
+#totals {
+  margin-bottom: .5rem;
+}
+
+.tipNumber {
+  width: 2rem;
 }
