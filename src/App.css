@@ -143,3 +143,8 @@ select {
 .tipNumber {
   width: 2rem;
 }
+
+.thenumber {
+  border: 1px solid purple;
+  box-sizing: border-box;
+}
