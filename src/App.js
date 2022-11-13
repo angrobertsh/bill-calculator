@@ -11,29 +11,20 @@ import { Totals } from './Totals'
 //   items: [{ name: "Egg rolls", price: "100.00", eaters: [0], isShared true }],
 // }
 
-const App = () => {
-  const [people, setPeople] = useState([])
-  const [tax, setTax] = useState(10.50)
-  const [items, setItems] = useState([])
+const App = ({ storedData }) => {
+  const [people, setPeople] = useState(storedData.people || [])
+  const [tax, setTax] = useState(storedData.tax || 10.50)
+  const [items, setItems] = useState(storedData.items || [])
 
   useEffect(() => {
-    localStorage.setItem("BillSplitter", JSON.stringify({
+    const currentState = JSON.stringify({
       people,
       tax,
       items,
-    }))
-  }, [items, people, tax])
+    })
 
-  useEffect(() => {
-    try {
-      const storedData = JSON.parse(localStorage.getItem("BillSplitter"))
-      setPeople(storedData.people || [])
-      setTax(storedData.tax || 10.50)
-      setItems(storedData.items || [])
-    } catch (e) {
-      console.log("failed to load data")
-    }
-  }, [])
+    localStorage.setItem("BillSplitter", currentState)
+  }, [items, people, tax])
 
   const clearAll = useCallback(() => {
     setItems([])

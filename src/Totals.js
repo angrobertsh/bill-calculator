@@ -34,8 +34,6 @@ export const Totals = ({ items, people, tax, setPeople, setTax, clearAll}) => {
         }, 0), 
     [totalsWithTip])
 
-    console.log('totalsWithTip', totalsWithTip)
-
     const updateTip = useCallback((personIdx, e) => {
         const peopleClone = [...people]
         peopleClone[personIdx].tip = e.target.value

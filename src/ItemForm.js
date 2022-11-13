@@ -37,7 +37,7 @@ export const ItemForm = ({ item, items, setItems, people, afterSave }) => {
     }, [afterSave, item, items, newItem, setItems])
 
     const getSelectValue = useCallback(() => {
-        if (newItem.eaters.length > 1 || isShared) {
+        if (newItem.eaters.length > 1 || !!isShared) {
             return -1
         }
 
@@ -53,7 +53,7 @@ export const ItemForm = ({ item, items, setItems, people, afterSave }) => {
             setIsShared(true)
             setNewItem({ ...newItem, eaters: []})
             return 
-        } else if (isShared) {
+        } else if (!!isShared) {
             setIsShared(false)
         }
 

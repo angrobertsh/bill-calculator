@@ -102,6 +102,12 @@ select {
   justify-content: center;
 }
 
+.clearAllButton {
+  color: white;
+  font-size: large;
+  background-color: red;
+}
+
 .eaters {
   display: flex;
   margin-bottom: .4rem;
@@ -146,5 +152,6 @@ select {
 
 .thenumber {
   border: 1px solid purple;
+  padding: .3rem;
   box-sizing: border-box;
 }
