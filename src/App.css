@@ -26,7 +26,7 @@
 
 #totals .person {
   display: grid;
-  grid-template-columns: 28% 21% 28% 21%;
+  grid-template-columns: 25% 22% 29% 22%;
 }
 
 .people .person:nth-child(odd){

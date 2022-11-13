@@ -94,7 +94,7 @@ export const Totals = ({ items, people, tax, setPeople, setTax}) => {
                         <div>{person.name}</div>
                         <div>${totalsNoTip[idx]}</div>
                         <div className="tipinput">
-                            <div className="tip">Tip %:</div>
+                            <div className="tip">Tip %</div>
                             <input className="tipNumber" type="number" step="0.01" value={person.tip} onChange={(e) => updateTip(idx, e)}></input>
                         </div>
                         <div className="thenumber">${totalsWithTip[idx]} </div>
