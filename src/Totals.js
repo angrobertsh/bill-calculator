@@ -25,7 +25,7 @@ export const Totals = ({ items, people, tax, setPeople, setTax}) => {
         
         const proportion = parseFloat(tax.value) / (parseFloat(totalCostNoTax) || 1)
 
-        return 1 + parseFloat(proportion.toFixed(2))
+        return 1 + parseFloat(proportion)
     }, [totalCostNoTax, tax])
 
     const totalTax = useMemo(() => (
@@ -37,7 +37,7 @@ export const Totals = ({ items, people, tax, setPeople, setTax}) => {
     const totalsNoTip = useMemo(() => 
         items.reduce((acc, item) => {
             item.eaters.forEach(eater => {
-                const price = parseFloat(parseFloat(pricePerPerson(item) * taxFactor).toFixed(2))
+                const price = parseFloat(pricePerPerson(item) * taxFactor)
 
                 if (!acc[eater]) {
                     acc[eater] = price
@@ -53,9 +53,7 @@ export const Totals = ({ items, people, tax, setPeople, setTax}) => {
     const totalNoTip = useMemo(() => sum(totalsNoTip), [totalsNoTip])
 
     const totalsWithTip = useMemo(() => (
-        totalsNoTip.map((total, idx) => (
-            parseFloat((total * (1 + parseFloat(people[idx].tip || 0) / 100.00)).toFixed(2)
-        )))
+        totalsNoTip.map((total, idx) => total * (1 + parseFloat(people[idx].tip || 0) / 100.00))
     ), [people, totalsNoTip])
 
     const totalWithTip = useMemo(() => sum(totalsWithTip), [totalsWithTip])
@@ -97,7 +95,7 @@ export const Totals = ({ items, people, tax, setPeople, setTax}) => {
                             <div className="tip">Tip %</div>
                             <input className="tipNumber" type="number" step="0.01" value={person.tip} onChange={(e) => updateTip(idx, e)}></input>
                         </div>
-                        <div className="thenumber">${totalsWithTip[idx]} </div>
+                        <div className="thenumber">${(totalsWithTip[idx] || 0).toFixed(2)}</div>
                     </div>                
                 ))}
             </div>
