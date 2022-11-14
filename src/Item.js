@@ -20,12 +20,12 @@ export const Item = ({ items, item, people, setItems }) => {
             return <i>Nobody is paying for this</i>
         }
 
-        if (item.eaters.length === people.length) {
+        if ((item.eaters.length === people.length) && item.isShared) {
             return <span className="everyone">Everyone</span>
         }
 
         return item.eaters.map(eaterIdx => people[eaterIdx].name).join(', ')
-    }, [item.eaters, people])
+    }, [item.eaters, item.isShared, people])
 
     return (
         <div >
