@@ -20,7 +20,7 @@ export const Item = ({ items, item, people, setItems }) => {
             return <i>Nobody is paying for this</i>
         }
 
-        if ((item.eaters.length === people.length) && item.isShared) {
+        if ((item.eaters.length === people.length) && !!item.isShared) {
             return <span className="everyone">Everyone</span>
         }
 

@@ -6,7 +6,6 @@ const sum = (arr) =>
         return acc
     }, 0)
 
-
 export const Totals = ({ items, people, tax, setPeople, setTax}) => {
     const totalCostNoTax = useMemo(() => {
         const prices = items.map(item => parseFloat(item.price))

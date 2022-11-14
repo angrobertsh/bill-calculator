@@ -50,9 +50,9 @@ const validatePeople = (people) => {
       return true
     }
 
-    if (!validateNumber(tip)) {
-      return true
-    }
+    // if (!validateNumber(tip)) {
+    //   return true
+    // }
   }
 }
 
@@ -61,9 +61,9 @@ const validateTax = (tax) => {
     return true
   }
 
-  if (!validateNumber(tax.value)) {
-    return true
-  }
+  // if (!validateNumber(tax.value)) {
+  //   return true
+  // }
 }
 
 const validateNumber = (num) => !isNaN(parseFloat(num))
