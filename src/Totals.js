@@ -90,7 +90,7 @@ export const Totals = ({ items, people, tax, setPeople, setTax}) => {
                 { people.map((person, idx) => (
                     <div key={`${person.name}_total`} className="person">
                         <div>{person.name}</div>
-                        <div>${totalsNoTip[idx]}</div>
+                        <div>${(totalsNoTip[idx] || 0).toFixed(2)}</div>
                         <div className="tipinput">
                             <div className="tip">Tip %</div>
                             <input className="tipNumber" type="number" step="0.01" value={person.tip} onChange={(e) => updateTip(idx, e)}></input>
