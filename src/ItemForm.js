@@ -86,7 +86,7 @@ export const ItemForm = ({ item, items, setItems, people, afterSave }) => {
 
     return (
         <>
-            <div>Name:</div>
+            <div>Food:</div>
             <input onChange={updateValue} name="name" value={newItem.name} />
             <div>Price:</div>
             <input onChange={updateValue} type="number" step="0.01" name="price" value={newItem.price} />
@@ -112,7 +112,7 @@ export const ItemForm = ({ item, items, setItems, people, afterSave }) => {
                     ))}
                 </div>                
             }
-            <button onClick={saveItem}>{ item ? "💾" : "Add item"}</button>
+            <button className={isShared ? "selectOpenButton" : ""} onClick={saveItem}>{ item ? "💾" : "Add item"}</button>
         </>
     )
 }

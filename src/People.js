@@ -33,6 +33,9 @@ export const People = ({ people, setPeople, items, setItems }) => {
         if (people.map(person => person.name).includes(name)) {
             window.alert("Duplicate name found")
             return
+        } else if (!name) {
+            window.alert("Please enter a valid name")
+            return
         }
 
         setPeople([...people, { name: name, tip: 0 }])

@@ -53,7 +53,7 @@
 
 button {
   padding: .4rem 1.25rem;
-  margin: 0rem .3rem;
+  margin-left: 1rem;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -62,17 +62,22 @@ button {
 input {
   margin: .3rem 0;
   padding: .4rem;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
 }
 
 select {
   margin: .3rem 0;
-  padding: .4rem;
+  padding: .4rem 2rem .4rem .4rem;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
+  background-image: url("arrowdown.png");
+  background-position: right;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.selectOpenButton {
+  margin: .5rem 0 0 0;
 }
 
 .items {
@@ -118,8 +123,8 @@ select {
 }
 
 .eaters {
+  margin: .5rem 0;
   display: flex;
-  margin-bottom: .4rem;
   flex-wrap: wrap;
 }
 
