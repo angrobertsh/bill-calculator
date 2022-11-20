@@ -54,6 +54,7 @@
 button {
   padding: .4rem 1.25rem;
   margin: 0rem .3rem;
+  -webkit-appearance: none;
 }
 
 input {
