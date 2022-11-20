@@ -67,6 +67,7 @@ input {
 select {
   margin: .3rem 0;
   padding: .4rem 2rem .4rem .4rem;
+  border: 1px solid black;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
